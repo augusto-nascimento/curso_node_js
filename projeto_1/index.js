@@ -9,6 +9,21 @@ app.get("/blog", function(req, res){
     res.send("Bem vindo ao blog")
 })
 
+app.get("/canal", function(req, res){
+    res.send("Bem vindo ao canal")
+})
+
+app.get("/ola/:nome/:empresa?", function(req, res){
+    var nome = req.params.nome
+    var empresa = req.params.empresa
+    if (empresa) {
+        res.send("<h1>Oi</h1>" + req.params.nome + " da " + empresa)
+    }
+    else {
+        res.send("<h1>Oi</h1>" + req.params.nome)
+    }
+})
+
 app.listen(8080, function(erro) {
     if (erro) {
         console.log("Ocorreu um erro");
