@@ -6,7 +6,8 @@ app.get("/", function(req, res){
 })
 
 app.get("/blog", function(req, res){
-    res.send("Bem vindo ao blog")
+    var artigo = req.query["artigo"];
+    res.send("<h1>Bem vindo ao blog</h1> Artigo n" + artigo)
 })
 
 app.get("/canal", function(req, res){
